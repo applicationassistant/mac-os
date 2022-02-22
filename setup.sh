@@ -1,19 +1,16 @@
-#Credit: https://github.com/Area69Lab
-#setup.sh VNC_USER_PASSWORD VNC_PASSWORD NGROK_AUTH_TOKEN
 
-#disable spotlight indexing
 sudo mdutil -i off -a
 
 #Create new account
-sudo dscl . -create /Users/Adam
-sudo dscl . -create /Users/Adam UserShell /bin/bash
-sudo dscl . -create /Users/Adam RealName "Adam"
-sudo dscl . -create /Users/Adam UniqueID 1001
-sudo dscl . -create /Users/Adam PrimaryGroupID 80
-sudo dscl . -create /Users/Adam NFSHomeDirectory /Users/vncuser
-sudo dscl . -passwd /Users/Adam $1
-sudo dscl . -passwd /Users/Adam $1
-sudo createhomedir -c -u Adam > /dev/null
+sudo dscl . -create /Users/robo
+sudo dscl . -create /Users/robo UserShell /bin/bash
+sudo dscl . -create /Users/robo RealName "robo"
+sudo dscl . -create /Users/robo UniqueID 1001
+sudo dscl . -create /Users/robo PrimaryGroupID 80
+sudo dscl . -create /Users/robo NFSHomeDirectory /Users/vncuser
+sudo dscl . -passwd /Users/robo $1
+sudo dscl . -passwd /Users/robo $1
+sudo createhomedir -c -u robo > /dev/null
 
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
